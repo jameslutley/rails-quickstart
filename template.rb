@@ -38,7 +38,7 @@ def add_gems
   # gem 'omniauth-facebook', '~> 5.0'
   gem 'omniauth-google-oauth2', '~> 0.6.0'
   gem 'omniauth-twitter', '~> 1.4'
-  gem 'sidekiq', '~> 5.2', '>= 5.2.5'
+  # gem 'sidekiq', '~> 5.2', '>= 5.2.5'
   gem 'sitemap_generator', '~> 6.0', '>= 6.0.2'
   gem 'tailwindcss', '~> 0.2.0'
   gem 'whenever', require: false
@@ -162,17 +162,17 @@ def copy_templates
   route "get '/privacy', to: 'home#privacy'"
 end
 
-def add_sidekiq
-  environment "config.active_job.queue_adapter = :sidekiq"
+# def add_sidekiq
+#   environment "config.active_job.queue_adapter = :sidekiq"
 
-  insert_into_file "config/routes.rb",
-    "require 'sidekiq/web'\n\n",
-    before: "Rails.application.routes.draw do"
+#   insert_into_file "config/routes.rb",
+#     "require 'sidekiq/web'\n\n",
+#     before: "Rails.application.routes.draw do"
 
-  insert_into_file "config/routes.rb",
-    "  authenticate :user, lambda { |u| u.admin? } do\n    mount Sidekiq::Web => '/sidekiq'\n  end\n\n",
-    after: "Rails.application.routes.draw do\n"
-end
+#   insert_into_file "config/routes.rb",
+#     "  authenticate :user, lambda { |u| u.admin? } do\n    mount Sidekiq::Web => '/sidekiq'\n  end\n\n",
+#     after: "Rails.application.routes.draw do\n"
+# end
 
 def add_foreman
   copy_file "Procfile"
@@ -272,7 +272,7 @@ after_bundle do
   # add_root
   add_users
   add_tailwindcss
-  add_sidekiq
+  # add_sidekiq
   add_foreman
   add_announcements
   add_notifications
