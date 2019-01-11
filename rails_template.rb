@@ -175,7 +175,7 @@ def add_sidekiq
 end
 
 def add_foreman
-  copy_file "~/dev/rails-template/Procfile"
+  copy_file "Procfile"
 end
 
 def add_announcements
