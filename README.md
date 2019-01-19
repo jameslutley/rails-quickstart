@@ -26,13 +26,13 @@ You’ll need to add a `.railsrc` to your home directory for Rails Quickstart to
 --database=postgresql
 --webpack
 --skip-coffee
---template=~/[path-to-rails-quickstart]/rails_template.rb
+--template=~/[path-to-rails-quickstart]/template.rb
 ```
 
 #### Creating a new app
 
 ```bash
-rails new myapp
+rails new myapp -m https://raw.githubusercontent.com/jameslutley/rails-quickstart/master/template.rb
 ```
 
 #### Authenticate with social networks
