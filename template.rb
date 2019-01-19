@@ -91,10 +91,6 @@ def add_minitest
   create_file "Guardfile", guardfile
 end
 
-def add_activestorage
-  generate "active_storage:install"
-end
-
 # def add_root
 #   if yes? 'Do you wish to generate a root controller? (y/n)'
 #     name = ask('What do you want to call it?').to_s.underscore
@@ -153,7 +149,7 @@ def add_tailwindcss
   run "yarn add rails-ujs turbolinks local-time"
 
   # Setup Application CSS and JS
-  run "touch app/javascript/packs/application.js"
+  create_file "app/javascript/packs/application.js"
 
   insert_into_file(
     "app/javascript/packs/application.js",
@@ -236,6 +232,10 @@ def add_app_helpers_to_administrate
   end
 end
 
+def add_activestorage
+  generate "active_storage:install"
+end
+
 def add_multiple_authentication
     insert_into_file "config/routes.rb",
     ', controllers: { omniauth_callbacks: "users/omniauth_callbacks" }',
@@ -287,7 +287,6 @@ after_bundle do
   set_application_name
   stop_spring
   add_minitest
-  add_activestorage
   # add_root
   add_users
   add_tailwindcss
@@ -304,8 +303,9 @@ after_bundle do
 
   # Migrations must be done before this
   add_administrate
-
   add_app_helpers_to_administrate
+
+  add_activestorage
 
   copy_templates
 
