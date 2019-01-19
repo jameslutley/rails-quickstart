@@ -1,6 +1,5 @@
 require "fileutils"
 require "shellwords"
-require "active_storage/engine"
 
 # # Copied from: https://github.com/mattbrictson/rails-template
 # # Add this template directory to source_paths so that Thor actions like
@@ -232,7 +231,7 @@ def add_app_helpers_to_administrate
 end
 
 def add_activestorage
-  generate "active_storage:install"
+  rails_command "active_storage:install"
 end
 
 def add_multiple_authentication
