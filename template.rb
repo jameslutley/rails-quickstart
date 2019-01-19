@@ -303,13 +303,13 @@ after_bundle do
   add_administrate
   add_app_helpers_to_administrate
 
-  add_activestorage
-
   copy_templates
 
   add_whenever
 
   add_sitemap
+
+  add_activestorage
 
   git :init
   git add: "."
