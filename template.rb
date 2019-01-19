@@ -1,5 +1,6 @@
 require "fileutils"
 require "shellwords"
+require "active_storage/engine"
 
 # # Copied from: https://github.com/mattbrictson/rails-template
 # # Add this template directory to source_paths so that Thor actions like
@@ -294,6 +295,7 @@ after_bundle do
   add_notifications
   add_multiple_authentication
   add_friendly_id
+  add_activestorage
 
   # Migrate
   rails_command "db:create"
@@ -308,8 +310,6 @@ after_bundle do
   add_whenever
 
   add_sitemap
-
-  add_activestorage
 
   git :init
   git add: "."
