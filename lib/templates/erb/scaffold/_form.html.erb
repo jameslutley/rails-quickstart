@@ -12,35 +12,35 @@
   <%% end %>
 
 <% attributes.each do |attribute| -%>
-  <div class="form-group">
+  <div class="mb-6">
 <% if attribute.password_digest? -%>
-    <%%= form.label :password %>
-    <%%= form.password_field :password, class: 'form-control' %>
+    <%%= form.label :password, class: "c-form__label" %>
+    <%%= form.password_field :password, class: "c-form__field" %>
   </div>
 
-  <div class="form-group">
-    <%%= form.label :password_confirmation %>
-    <%%= form.password_field :password_confirmation, class: 'form-control' %>
+  <div class="mb-6">
+    <%%= form.label :password_confirmation, class: "c-form__label" %>
+    <%%= form.password_field :password_confirmation, class: "c-form__field" %>
 <% else -%>
-    <%%= form.label :<%= attribute.column_name %> %>
-    <%%= form.<%= attribute.field_type %> :<%= attribute.column_name %>, class: 'form-control' %>
+    <%%= form.label :<%= attribute.column_name %>, class: "c-form__label" %>
+    <%%= form.<%= attribute.field_type %> :<%= attribute.column_name %>, class: "c-form__field" %>
 <% end -%>
   </div>
 
 <% end -%>
-  <div class="form-group">
+  <div class="flex flex-wrap items-center">
+    <%%= form.submit class: "c-btn c-btn--blue" %>
+
     <%% if <%= model_resource_name %>.persisted? %>
-      <div class="float-right">
-        <%%= link_to 'Destroy', <%= model_resource_name %>, method: :delete, class: "text-danger", data: { confirm: 'Are you sure?' } %>
-      </div>
+      <%%= link_to "Cancel", <%= model_resource_name %>, class: "c-btn c-btn--grey ml-4" %>
+    <%% else %>
+      <%%= link_to "Cancel", <%= index_helper %>_path, class: "c-btn c-btn--grey ml-4" %>
     <%% end %>
 
-    <%%= form.submit class: 'btn btn-primary' %>
-
     <%% if <%= model_resource_name %>.persisted? %>
-      <%%= link_to "Cancel", <%= model_resource_name %>, class: "btn btn-link" %>
-    <%% else %>
-      <%%= link_to "Cancel", <%= index_helper %>_path, class: "btn btn-link" %>
+      <div class="float-right">
+        <%%= link_to 'Destroy', <%= model_resource_name %>, method: :delete, class: "c-btn--link ml-4", data: { confirm: 'Are you sure?' } %>
+      </div>
     <%% end %>
   </div>
 <%% end %>
