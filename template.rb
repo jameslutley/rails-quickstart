@@ -166,7 +166,7 @@ def add_tailwindcss
 
   insert_into_file(
     "app/javascript/packs/admin.js",
-    "import Rails from 'rails-ujs'\nimport Turbolinks from 'turbolinks'\nimport LocalTime from 'local-time'\n\nRails.start()\nTurbolinks.start()\nLocalTime.start()\nimport '../css/admin.css'",
+    "import Rails from 'rails-ujs'\nimport Turbolinks from 'turbolinks'\nimport LocalTime from 'local-time'\n\nRails.start()\nTurbolinks.start()\nLocalTime.start()\nimport '../css/tailwind.css'\nimport '../css/admin.css'",
     after: ""
   )
 end
@@ -298,8 +298,6 @@ after_bundle do
   add_multiple_authentication
   add_friendly_id
 
-  copy_templates
-
   # Migrate
   rails_command "db:create"
   rails_command "db:migrate"
@@ -308,6 +306,8 @@ after_bundle do
   add_administrate
 
   add_app_helpers_to_administrate
+
+  copy_templates
 
   add_whenever
 
