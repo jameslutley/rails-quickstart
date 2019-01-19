@@ -166,7 +166,8 @@ def add_tailwindcss
 
   insert_into_file(
     "app/javascript/packs/admin.js",
-    "import Rails from 'rails-ujs'\nimport Turbolinks from 'turbolinks'\nimport LocalTime from 'local-time'\n\nRails.start()\nTurbolinks.start()\nLocalTime.start()\nimport '../css/admin.css'"
+    "import Rails from 'rails-ujs'\nimport Turbolinks from 'turbolinks'\nimport LocalTime from 'local-time'\n\nRails.start()\nTurbolinks.start()\nLocalTime.start()\nimport '../css/admin.css'",
+    after: ""
   )
 end
 
