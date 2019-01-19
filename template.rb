@@ -39,6 +39,7 @@ def add_gems
   # gem 'omniauth-facebook', '~> 5.0'
   gem 'omniauth-google-oauth2', '~> 0.6.0'
   gem 'omniauth-twitter', '~> 1.4'
+  gem 'redcarpet', '~> 3.4'
   # gem 'sidekiq', '~> 5.2', '>= 5.2.5'
   gem 'sitemap_generator', '~> 6.0', '>= 6.0.2'
   gem 'tailwindcss', '~> 0.2.0'
