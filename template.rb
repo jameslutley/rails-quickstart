@@ -157,7 +157,7 @@ def add_tailwindcss
 
   insert_into_file(
     "app/javascript/packs/application.js",
-    "\nimport Rails from 'rails-ujs'\nimport Turbolinks from 'turbolinks'\nimport LocalTime from 'local-time'\n\nRails.start()\nTurbolinks.start()\nLocalTime.start()\nimport '../css/application.css'",
+    "\nimport Rails from 'rails-ujs'\nimport Turbolinks from 'turbolinks'\nimport LocalTime from 'local-time'\n\nRails.start()\nTurbolinks.start()\nLocalTime.start()\nimport '../css/application.css'\n",
     after: "console.log('Hello World from Webpacker')"
   )
 
@@ -166,7 +166,7 @@ def add_tailwindcss
 
   insert_into_file(
     "app/javascript/packs/admin.js",
-    "import Rails from 'rails-ujs'\nimport Turbolinks from 'turbolinks'\nimport LocalTime from 'local-time'\n\nRails.start()\nTurbolinks.start()\nLocalTime.start()\nimport '../css/tailwind.css'\nimport '../css/admin.css'",
+    "import Rails from 'rails-ujs'\nimport Turbolinks from 'turbolinks'\nimport LocalTime from 'local-time'\n\nRails.start()\nTurbolinks.start()\nLocalTime.start()\nimport '../css/tailwind.css'\nimport '../css/admin.css'\n",
     after: ""
   )
 end
