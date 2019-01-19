@@ -152,10 +152,21 @@ def add_tailwindcss
   # Add Turbolinks & LocalTime JavaScript
   run "yarn add rails-ujs turbolinks local-time"
 
+  # Setup Application CSS and JS
+  run "touch app/javascript/packs/application.js"
+
   insert_into_file(
     "app/javascript/packs/application.js",
     "\nimport Rails from 'rails-ujs'\nimport Turbolinks from 'turbolinks'\nimport LocalTime from 'local-time'\n\nRails.start()\nTurbolinks.start()\nLocalTime.start()\nimport '../css/application.css'",
     after: "console.log('Hello World from Webpacker')"
+  )
+
+  # Setup Administrate (Admin) CSS and JS
+  run "touch app/javascript/packs/admin.js"
+
+  insert_into_file(
+    "app/javascript/packs/admin.js",
+    "import Rails from 'rails-ujs'\nimport Turbolinks from 'turbolinks'\nimport LocalTime from 'local-time'\n\nRails.start()\nTurbolinks.start()\nLocalTime.start()\nimport '../css/admin.css'"
   )
 end
 
