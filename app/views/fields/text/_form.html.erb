@@ -1,0 +1,34 @@
+<%#
+# Text Form Partial
+
+This partial renders a textarea element for a text attribute.
+
+## Local variables:
+
+- `f`:
+  A Rails form generator, used to help create the appropriate input fields.
+- `field`:
+  An instance of [Administrate::Field::Text][1].
+  A wrapper around the Text pulled from the database.
+
+[1]: http://www.rubydoc.info/gems/administrate/Administrate/Field/Text
+%>
+
+<div class="c-form__label">
+  <%= f.label field.attribute %>
+</div>
+<div class="simple-markdown w-full max-w-lg">
+  <%= f.text_area field.attribute %>
+</div>
+
+<% content_for :javascript_head do %>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplemde/1.11.2/simplemde.min.css" data-turbolinks-track="reload">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/simplemde/1.11.2/simplemde.min.js" data-turbolinks-track="reload"></script>
+<script type="text/javascript">
+  document.addEventListener('turbolinks:load', function() {
+    var editor = new SimpleMDE({
+      element: document.getElementById('<%= f.object.class.name.underscore %>_<%= field.attribute %>')
+    })
+  })
+</script>
+<% end %>

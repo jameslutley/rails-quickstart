@@ -1,0 +1,24 @@
+<div class="flex justify-center">
+  <div class="w-full max-w-sm">
+    <div class="bg-white shadow-lg rounded-lg pt-12 px-8 pb-8 mb-8">
+      <h1 class="font-semibold text-2xl leading-none mb-6 text-center">Forgot your password?</h1>
+
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+        <%= devise_error_messages! %>
+
+        <div class="mb-4">
+          <%= f.label :email, class: "c-form__label" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "c-form__field", placeholder: "Email Address" %>
+        </div>
+
+        <div class="actions pt-2">
+          <%= f.submit "Send me reset password instructions", class: "w-full shadow bg-blue hover:bg-blue-dark focus:shadow-outline focus:outline-none text-white font-semibold py-4 px-8 rounded leading-none cursor-pointer" %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="text-center">
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>

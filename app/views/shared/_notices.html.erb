@@ -1,7 +1,7 @@
 <% flash.each do |msg_type, message| %>
-  <div class="alert <%= tailwind_class_for(msg_type) %>">
-    <div class="container mx-auto">
-      <button class="close" data-dismiss="alert"><span>×</span></button>
+  <div class="flex-no-shrink alert <%= tailwind_class_for(msg_type) %>">
+    <div class="w-full max-w-3xl mx-auto px-6">
+      <button class="c-btn c-btn--grey c-btn--sm float-right close" data-dismiss="alert"><span>×</span></button>
       <%= message %>
     </div>
   </div>

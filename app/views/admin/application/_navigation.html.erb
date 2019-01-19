@@ -7,18 +7,23 @@ for all resources in the admin dashboard,
 as defined by the routes in the `admin/` namespace
 %>
 
-<nav class="navigation" role="navigation">
-  <%= link_to(
-    "← Back to App",
-    root_path,
-    class: "navigation__link"
-  ) %>
-
-  <% Administrate::Namespace.new(namespace).resources.each do |resource| %>
-    <%= link_to(
-      display_resource_name(resource),
-      [namespace, resource_index_route_key(resource)],
-      class: "navigation__link navigation__link--#{nav_link_state(resource)}"
-    ) %>
-  <% end %>
+<nav class="navigation flex flex-col flex-auto pb-6 bg-grey-lightest border-r border-grey-lighter" role="navigation">
+  <div class="flex-none w-64">
+    <%= link_to Rails.configuration.application_name, root_path, class: "flex font-semibold text-xl text-black hover:text-grey-darkest no-underline py-6 px-6 lg:px-8" %>
+    <div class="flex items-center py-3 px-6 lg:px-8">
+      <span class="flex text-blue">
+        <svg class="w-4 h-4 fill-current mr-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M0 0h9v9H0V0zm2 2v5h5V2H2zm-2 9h9v9H0v-9zm2 2v5h5v-5H2zm9-13h9v9h-9V0zm2 2v5h5V2h-5zm-2 9h9v9h-9v-9zm2 2v5h5v-5h-5z"></path></svg>
+      </span>
+      <span class="text-blue font-medium">Resources</span>
+    </div>
+    <nav class="pl-8 lg:pl-10">
+      <% Administrate::Namespace.new(namespace).resources.each do |resource| %>
+        <%= link_to(
+          display_resource_name(resource),
+          [namespace, resource_index_route_key(resource)],
+          class: "navigation__link navigation__link--#{nav_link_state(resource)} block no-underline px-6 py-3 text-grey-darker cursor-pointer"
+        ) %>
+      <% end %>
+    </nav>
+  </div>
 </nav>

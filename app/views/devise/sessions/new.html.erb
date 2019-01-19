@@ -1,0 +1,33 @@
+<div class="flex justify-center">
+  <div class="w-full max-w-sm">
+    <div class="bg-white shadow-lg rounded-lg pt-12 px-8 pb-8 mb-8">
+      <h1 class="font-semibold text-2xl leading-none mb-6 text-center">Log in</h1>
+
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="mb-6">
+          <%= f.label :email, class: "c-form__label" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "c-form__field", placeholder: "Email Address" %>
+        </div>
+
+        <div class="mb-6">
+          <%= f.label :password, class: "c-form__label" %>
+          <%= f.password_field :password, autocomplete: "current-password", class: "c-form__field", placeholder: "Password" %>
+        </div>
+
+        <% if devise_mapping.rememberable? -%>
+          <div class="mb-6">
+            <%= f.check_box :remember_me, class: "mr-2 leading-tight" %><%= f.label :remember_me, class: "text-grey-darkest text-sm font-medium" %>
+          </div>
+        <% end -%>
+
+        <div class="actions pt-2">
+          <%= f.submit "Log in", class: "c-btn c-btn--blue w-full" %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="text-center">
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>

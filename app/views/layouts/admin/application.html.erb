@@ -1,0 +1,45 @@
+<%#
+# Application Layout
+
+This view template is used as the layout
+for every page that Administrate generates.
+
+By default, it renders:
+- Navigation
+- Content for a search bar
+  (if provided by a `content_for` block in a nested page)
+- Flashes
+- Links to stylesheets and JavaScripts
+%>
+
+<!DOCTYPE html>
+<html lang="<%= I18n.locale %>">
+<head>
+  <meta charset="utf-8">
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+  <meta name="ROBOTS" content="NOODP">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>
+    <%= content_for(:title) %> - <%= Rails.application.class.parent_name.titlecase %>
+  </title>
+  <%= stylesheet_pack_tag 'admin', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'admin', 'data-turbolinks-track': 'reload' %>
+	<%= yield :javascript_head %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="font-sans text-black leading-normal">
+  <%= render "icons" %>
+
+  <div class="app-container flex items-stretch min-h-screen">
+    <%= render "navigation" -%>
+
+    <main class="main-content w-full flex flex-col bg-white" role="main">
+      <%= render "navbar" -%>
+      <%= render "flashes" -%>
+      <div class="px-6 lg:px-12 py-6">
+        <%= yield %>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,6 +1,6 @@
-<h1>Notifications</h1>
+<h1 class="font-semibold text-3xl lg:text-4xl leading-none mb-6">Notifications</h1>
 
-<ul>
+<ul class="list-reset">
   <% @notifications.each do |notification| %>
     <li><%= render "notifications/#{notification.notifiable_type.underscore}/#{notification.action.underscore}", actor: notification.actor, notifiable: notification.notifiable  %></li>
   <% end %>

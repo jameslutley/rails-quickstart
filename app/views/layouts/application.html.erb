@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html class="w-full h-full">
   <head>
     <%= render 'shared/head' %>
   </head>
 
-  <body>
-    <%= render 'shared/navbar' %>
-    <%= render 'shared/notices' %>
+  <body class="w-full h-full font-sans text-black leading-normal bg-grey-lightest">
+    <div class="flex flex-col items-stretch min-h-full">
+      <%= render 'shared/navbar' %>
+      <%= render 'shared/notices' %>
 
-    <div class="container mx-auto">
-      <%= yield %>
+      <main class="flex-grow flex-no-shrink w-full max-w-3xl mx-auto pt-24 px-6 pb-16">
+        <%= yield %>
+      </main>
+
+      <%= render 'shared/footer' %>
     </div>
-
-    <%= render 'shared/footer' %>
   </body>
 </html>

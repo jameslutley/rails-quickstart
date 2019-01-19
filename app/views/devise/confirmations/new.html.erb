@@ -1,0 +1,24 @@
+<div class="flex justify-center">
+  <div class="w-full max-w-sm">
+    <div class="bg-white shadow-lg rounded-lg pt-12 px-8 pb-8 mb-8">
+      <h1 class="font-semibold text-2xl leading-none mb-6 text-center">Resend confirmation instructions</h1>
+
+      <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+        <%= devise_error_messages! %>
+
+        <div class="mb-6">
+          <%= f.label :email, class: "c-form__label" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), class: "c-form__field" %>
+        </div>
+
+        <div class="actions pt-2">
+          <%= f.submit "Resend confirmation instructions", class: "c-btn c-btn--blue w-full" %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="text-center">
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>
