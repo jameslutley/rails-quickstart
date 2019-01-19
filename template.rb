@@ -157,14 +157,6 @@ def add_tailwindcss
     "\nimport Rails from 'rails-ujs'\nimport Turbolinks from 'turbolinks'\nimport LocalTime from 'local-time'\n\nRails.start()\nTurbolinks.start()\nLocalTime.start()\nimport '../css/application.css'",
     after: "console.log('Hello World from Webpacker')"
   )
-
-  # Add Tailwind CSS, Turbolinks & LocalTime JavaScript to Administrate
-  run "touch app/javascript/packs/admin.js"
-
-  insert_into_file(
-    "app/javascript/packs/admin.js",
-    "\nimport Rails from 'rails-ujs'\nimport Turbolinks from 'turbolinks'\nimport LocalTime from 'local-time'\n\nRails.start()\nTurbolinks.start()\nLocalTime.start()\nimport '../css/admin.css'"
-  )
 end
 
 def copy_templates
