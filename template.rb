@@ -27,6 +27,7 @@ end
 
 def add_gems
   gem 'administrate', '~> 0.11.0'
+  gem 'administrate-field-active_storage', '~> 0.1.4'
   gem 'devise', '~> 4.5'
   gem 'devise_masquerade', '~> 0.6.5'
   gem 'foreman', '~> 0.85.0'
@@ -89,6 +90,10 @@ def add_minitest
   create_file "Guardfile", guardfile
 end
 
+def add_activestorage
+  generate "active_storage:install"
+end
+
 # def add_root
 #   if yes? 'Do you wish to generate a root controller? (y/n)'
 #     name = ask('What do you want to call it?').to_s.underscore
@@ -143,13 +148,21 @@ def add_tailwindcss
   # Install Tailwind CSS
   generate "tailwindcss:install"
 
-  # Add Turbolinks JS & LocalTime JavaScript
+  # Add Turbolinks & LocalTime JavaScript
   run "yarn add rails-ujs turbolinks local-time"
 
   insert_into_file(
     "app/javascript/packs/application.js",
-    "\nimport Rails from 'rails-ujs'\nimport Turbolinks from 'turbolinks'\nimport LocalTime from 'local-time'\n\nRails.start()\nTurbolinks.start()\nLocalTime.start()",
+    "\nimport Rails from 'rails-ujs'\nimport Turbolinks from 'turbolinks'\nimport LocalTime from 'local-time'\n\nRails.start()\nTurbolinks.start()\nLocalTime.start()\nimport '../css/application.css'",
     after: "console.log('Hello World from Webpacker')"
+  )
+
+  # Add Tailwind CSS, Turbolinks & LocalTime JavaScript to Administrate
+  run "touch app/javascript/packs/admin.js"
+
+  insert_into_file(
+    "app/javascript/packs/admin.js",
+    "\nimport Rails from 'rails-ujs'\nimport Turbolinks from 'turbolinks'\nimport LocalTime from 'local-time'\n\nRails.start()\nTurbolinks.start()\nLocalTime.start()\nimport '../css/admin.css'"
   )
 end
 
@@ -269,6 +282,7 @@ after_bundle do
   set_application_name
   stop_spring
   add_minitest
+  add_activestorage
   # add_root
   add_users
   add_tailwindcss
