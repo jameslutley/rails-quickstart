@@ -1,0 +1,39 @@
+.search {
+  @apply w-full max-w-sm mx-4 relative;
+}
+
+.search__label {
+  @apply text-grey-dark;
+}
+
+.search__eyeglass-icon {
+  @apply h-4 w-4 fill-current absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.search__input {
+  @apply appearance-none block w-full bg-grey-lighter text-grey-darkest border border-grey-lighter rounded-full py-3 px-10 leading-tight;
+}
+
+.search__input:focus {
+  @apply outline-none bg-white border-blue;
+}
+
+.search__clear-link {
+  @apply text-grey-dark;
+}
+
+.search__clear-link:hover,
+.search__clear-link:focus {
+  @apply text-grey-darker;
+}
+
+.search__clear-icon {
+  @apply h-4 w-4 fill-current absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+

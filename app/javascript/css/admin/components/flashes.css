@@ -1,0 +1,40 @@
+#error_explanation {
+  @apply text-grey-darkest mb-6;
+}
+
+#error_explanation h2 {
+  @apply font-semibold text-xl leading-none text-grey-darkest mb-6;
+}
+
+#error_explanation ul {
+  @apply list-reset;
+}
+
+#error_explanation li {
+  @apply w-full max-w-sm px-4 py-3 mb-4;
+}
+
+#error_explanation li:last-child {
+  @apply mb-0;
+}
+
+.flash-error {
+  @apply bg-red-lightest border-l-4 border-red-light text-red-darkest p-6 mb-4;
+}
+
+.flash-alert {
+  @apply bg-orange-lightest border-l-4 border-orange-light text-orange-darkest p-6 mb-4;
+}
+
+.flash-notice {
+  @apply bg-blue-lightest border-l-4 border-blue-light text-blue-darkest p-6 mb-4;
+}
+
+.flash-success {
+  @apply bg-green-lightest border-l-4 border-green-light text-green-darkest p-6 mb-4;
+}
+
+.flashes .flash {
+  @apply border-0 text-center;
+}
+

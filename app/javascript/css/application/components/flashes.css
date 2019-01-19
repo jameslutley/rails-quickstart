@@ -1,0 +1,29 @@
+.alert {
+  @apply bg-grey-lightest p-6;
+}
+
+.alert a {
+  @apply font-medium;
+  color: inherit;
+}
+
+.alert-danger {
+  @apply bg-red-lightest text-red-darkest;
+}
+
+.alert-warning {
+  @apply bg-orange-lightest text-orange-darkest;
+}
+
+.alert-info {
+  @apply bg-blue-lightest text-blue-darkest;
+}
+
+.alert-success {
+  @apply bg-green-lightest text-green-darkest;
+}
+
+form .alert {
+  @apply px-6 py-4 mb-4;
+}
+

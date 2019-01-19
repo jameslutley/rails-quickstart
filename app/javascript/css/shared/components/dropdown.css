@@ -1,0 +1,8 @@
+.c-dropdown__menu {
+  display: none;
+}
+
+.c-dropdown:hover .c-dropdown__menu {
+  display: block;
+}
+

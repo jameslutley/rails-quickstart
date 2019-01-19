@@ -1,0 +1,113 @@
+fieldset {
+  @apply border-0 m-0 p-0;
+}
+
+legend {
+  @apply font-semibold m-0 p-0;
+}
+
+label {
+  @apply block font-semibold m-0;
+}
+
+input,
+select {
+  @apply block font-sans;
+}
+
+input,
+select,
+textarea {
+  @apply block font-sans;
+}
+
+[type="color"],
+[type="date"],
+[type="datetime-local"],
+[type="email"],
+[type="month"],
+[type="number"],
+[type="password"],
+[type="search"],
+[type="tel"],
+[type="text"],
+[type="time"],
+[type="url"],
+[type="week"],
+input:not([type]),
+select,
+textarea,
+[multiple="multiple"] {
+  @apply appearance-none block w-full max-w-sm bg-grey-lightest text-grey-darkest border border-grey-light rounded px-4 py-3 leading-tight;
+}
+
+[type="color"]:focus,
+[type="date"]:focus,
+[type="datetime-local"]:focus,
+[type="email"]:focus,
+[type="month"]:focus,
+[type="number"]:focus,
+[type="password"]:focus,
+[type="search"]:focus,
+[type="tel"]:focus,
+[type="text"]:focus,
+[type="time"]:focus,
+[type="url"]:focus,
+[type="week"]:focus,
+input:not([type]):focus,
+select:focus,
+textarea:focus,
+[multiple="multiple"]:focus {
+  @apply outline-none bg-white border-blue;
+}
+
+[type="color"]:disabled,
+[type="date"]:disabled,
+[type="datetime-local"]:disabled,
+[type="email"]:disabled,
+[type="month"]:disabled,
+[type="number"]:disabled,
+[type="password"]:disabled,
+[type="search"]:disabled,
+[type="tel"]:disabled,
+[type="text"]:disabled,
+[type="time"]:disabled,
+[type="url"]:disabled,
+[type="week"]:disabled,
+input:not([type]):disabled,
+select:disabled,
+textarea:disabled,
+[multiple="multiple"]:disabled {
+  @apply cursor-not-allowed;
+}
+
+textarea {
+  @apply resize-y;
+}
+
+[type="checkbox"],
+[type="radio"] {
+  @apply inline mr-2;
+}
+
+[type="file"] {
+  @apply w-full;
+}
+
+select {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20"><path fill="hsla(0, 0%, 0%, 0.5)" d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>');
+  background-position: right 1rem center;
+  background-repeat: no-repeat;
+}
+
+select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 config('colors.grey-darkest');
+}
+
+[type="checkbox"]:focus,
+[type="radio"]:focus,
+[type="file"]:focus {
+  @apply shadow-outline outline-none;
+}
+

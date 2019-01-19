@@ -1,0 +1,7 @@
+.simple-markdown .editor-toolbar {
+  @apply h-12 bg-grey-lightest text-grey-darkest border-grey-light rounded-t opacity-100;
+}
+
+.simple-markdown .CodeMirror {
+  @apply bg-white text-grey-darkest border-grey-light rounded-b;
+}

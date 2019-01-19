@@ -1,0 +1,47 @@
+table {
+  @apply w-full border-collapse bg-white text-left mb-8;
+}
+
+table a {
+  @apply text-grey-darkest no-underline;
+}
+
+thead {
+  @apply font-medium text-sm leading-loose;
+}
+
+tr {
+  @apply border-b border-grey-lighter;
+}
+
+tbody tr:hover {
+  @apply bg-grey-lightest cursor-pointer;
+}
+
+tbody tr:focus {
+  @apply outline-none bg-grey-lightest;
+}
+
+td,
+th {
+  @apply px-6 py-4 align-middle;
+  font-feature-settings: "kern", "liga", "clig", "calt", "lnum", "tnum";
+  font-kerning: normal;
+  font-variant-ligatures: common-ligatures, contextual;
+  font-variant-numeric: lining-nums, tabular-nums;
+}
+
+td img {
+  @apply h-8 w-auto;
+}
+
+tr th:first-of-type,
+tr td:first-of-type {
+  @apply pl-0;
+}
+
+tr th:last-of-type,
+tr td:last-of-type {
+  @apply pr-0;
+}
+

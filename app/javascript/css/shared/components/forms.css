@@ -1,0 +1,16 @@
+.c-form__label {
+  @apply block text-grey-darkest text-sm font-medium mb-2;
+}
+
+.c-form__field {
+  @apply appearance-none block w-full max-w-md bg-grey-lightest text-grey-darkest border border-grey-light rounded py-3 px-4 leading-tight;
+}
+
+.c-form__field:focus {
+  @apply outline-none bg-white border-blue;
+}
+
+.c-form__help-text {
+  @apply text-grey-dark text-sm mt-2;
+}
+

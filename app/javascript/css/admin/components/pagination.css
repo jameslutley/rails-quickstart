@@ -1,0 +1,16 @@
+.pagination {
+  @apply mt-6 px-6 text-center;
+}
+
+.pagination .first,
+.pagination .prev,
+.pagination .page,
+.pagination .next,
+.pagination .last {
+  @apply m-3;
+}
+
+.pagination .current {
+  @apply font-semibold;
+}
+

@@ -1,0 +1,25 @@
+.cell-label a {
+  @apply w-full inline-block font-semibold text-grey-darkest;
+}
+
+.cell-label__sort-indicator {
+  @apply text-grey-dark float-right ml-4;
+}
+
+.cell-label__sort-indicator svg {
+  @apply w-3 h-3 fill-current;
+}
+
+.cell-label__sort-indicator--desc {
+  transform: rotate(180deg);
+}
+
+.cell-data--number,
+.cell-label--number {
+  @apply text-right;
+}
+
+.cell-data a {
+  @apply text-blue-darker;
+}
+

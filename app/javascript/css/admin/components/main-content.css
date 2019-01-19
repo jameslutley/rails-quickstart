@@ -1,0 +1,8 @@
+.main-content__header {
+  @apply flex items-center justify-between flex-wrap mb-8;
+}
+
+.main-content__page-title {
+  @apply font-semibold text-2xl leading-none;
+}
+

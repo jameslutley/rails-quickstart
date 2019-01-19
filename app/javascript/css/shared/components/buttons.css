@@ -1,0 +1,72 @@
+/* Base button */
+
+.c-btn {
+  @apply inline-block font-semibold py-4 px-8 rounded leading-none cursor-pointer no-underline;
+}
+
+.c-btn:hover {
+  @apply no-underline;
+}
+
+.c-btn:focus {
+  @apply shadow-outline outline-none;
+}
+
+.c-btn:disabled {
+  @apply cursor-not-allowed opacity-50;
+}
+
+/* Link button */
+
+.c-btn--link {
+  @apply font-semibold text-grey-dark py-4 px-8 leading-none cursor-pointer no-underline;
+}
+
+.c-btn--link:hover {
+  @apply text-grey-darker underline;
+}
+
+.c-btn:hover {
+  @apply no-underline;
+}
+
+.c-btn:focus {
+  @apply shadow-outline outline-none;
+}
+
+.c-btn:disabled {
+  @apply cursor-not-allowed opacity-50;
+}
+
+/* Color variations */
+
+.c-btn--blue {
+  @apply bg-blue text-white shadow;
+}
+
+.c-btn--blue:hover {
+  @apply bg-blue-dark;
+}
+
+.c-btn--grey {
+  @apply bg-grey-light text-grey-darkest;
+}
+
+.c-btn--grey:hover {
+  @apply text-black;
+}
+
+.c-btn--grey-action {
+  @apply bg-grey-lighter text-blue;
+}
+
+.c-btn--grey-action:hover {
+  @apply text-blue;
+}
+
+/* Size variations */
+
+.c-btn--sm {
+  @apply text-sm font-medium py-3 px-4;
+}
+

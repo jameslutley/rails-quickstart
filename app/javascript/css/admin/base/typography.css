@@ -1,0 +1,15 @@
+a {
+  text-decoration-skip: ink;
+}
+
+a.text-color-red {
+  @apply text-sm font-medium text-grey-dark;
+}
+
+a.text-color-red:hover {
+  @apply underline text-grey-darker;
+}
+
+dl {
+  @apply flex flex-row flex-wrap items-end bg-white;
+}

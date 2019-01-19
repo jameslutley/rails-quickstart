@@ -1,0 +1,43 @@
+.form {
+  @apply mb-8;
+}
+
+.field-unit__label {
+  @apply block text-grey-darkest text-sm font-medium mb-2;
+}
+
+.field-unit {
+  @apply mb-6;
+}
+
+.field-unit--boolean .field-unit__label,
+.field-unit--boolean .field-unit__field {
+  @apply flex items-center;
+}
+
+.field-unit--boolean .field-unit__label {
+  order: 2;
+}
+
+.field-unit--boolean .field-unit__field {
+  order: 1;
+}
+
+.field-unit--boolean {
+  @apply flex items-center;
+}
+
+.field-unit--boolean .field-unit__label {
+  @apply text-grey-darkest text-sm font-medium mb-0;
+}
+
+.field-unit--boolean input {
+  @apply mr-2 leading-tight;
+}
+
+.field-unit--select select {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20"><path fill="hsla(0, 0%, 0%, 0.5)" d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>');
+  background-position: right 1rem center;
+  background-repeat: no-repeat;
+}
+

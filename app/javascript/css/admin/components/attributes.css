@@ -1,0 +1,16 @@
+.attribute-label {
+  @apply w-1/6 mb-6 text-grey-darkest text-sm font-semibold;
+}
+
+.preserve-whitespace {
+  @apply whitespace-pre-wrap break-words;
+}
+
+.attribute-data {
+  @apply w-5/6 mb-6 pl-8 text-grey-darkest;
+}
+
+.attribute--nested {
+  @apply border border-grey-light p-4;
+}
+
