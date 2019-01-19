@@ -4,13 +4,8 @@
 <div class="flex justify-center">
   <div class="w-full max-w-xl2">
     <h1 class="font-semibold text-3xl lg:text-4xl xl:text-5xl leading-none my-6"><%= plural_table_name.capitalize %></h1>
-
-    <%%= link_to new_<%= singular_table_name %>_path, class: 'btn btn-primary' do %>
-      Add New <%= human_name %>
-    <%% end %>
-
     <div class="table-responsive">
-      <table class="w-full border-collapse bg-white text-left mb-8">
+      <table class="w-full border-collapse text-left mb-8">
         <thead class="font-medium text-sm leading-loose">
           <tr class="border-b border-grey-lighter">
         <% if has_name %>
@@ -38,7 +33,7 @@
               <% end -%>
 
               <% unless has_name %>
-                <td class="px-6 py-4 align-middle"><%%= link_to 'Show', <%= singular_table_name %> %></td>
+                <td class="px-6 py-4 align-middle"><%%= link_to 'Show', <%= singular_table_name %>, class: "c-btn c-btn--grey c-btn--sm" %></td>
               <% end %>
             <%% end %>
           <%% end %>
