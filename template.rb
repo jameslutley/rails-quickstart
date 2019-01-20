@@ -116,7 +116,6 @@ def add_users
   generate :devise, "User",
            "first_name",
            "last_name",
-           "announcements_last_read_at:datetime",
            "admin:boolean"
 
   # Set admin default to false
@@ -169,9 +168,6 @@ def copy_templates
   directory "app", force: true
   directory "config", force: true
   directory "lib", force: true
-
-  route "get '/terms', to: 'home#terms'"
-  route "get '/privacy', to: 'home#privacy'"
 end
 
 # def add_sidekiq
@@ -190,11 +186,6 @@ def add_foreman
   copy_file "Procfile"
 end
 
-def add_announcements
-  generate "model Announcement published_at:datetime announcement_type name description:text"
-  route "resources :announcements, only: [:index]"
-end
-
 def add_notifications
   generate "model Notification recipient_id:bigint actor_id:bigint read_at:datetime action:string notifiable_id:bigint notifiable_type:string"
   route "resources :notifications, only: [:index]"
@@ -202,10 +193,6 @@ end
 
 def add_administrate
   generate "administrate:install"
-
-  gsub_file "app/dashboards/announcement_dashboard.rb",
-    /announcement_type: Field::String/,
-    "announcement_type: Field::Select.with_options(collection: Announcement::TYPES)"
 
   gsub_file "app/dashboards/user_dashboard.rb",
     /email: Field::String/,
@@ -290,7 +277,6 @@ after_bundle do
   add_tailwindcss
   # add_sidekiq
   add_foreman
-  add_announcements
   add_notifications
   add_multiple_authentication
   add_friendly_id

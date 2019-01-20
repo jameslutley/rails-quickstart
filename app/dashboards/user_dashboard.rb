@@ -20,7 +20,6 @@ class UserDashboard < Administrate::BaseDashboard
     # remember_created_at: Field::DateTime,
     first_name: Field::String,
     last_name: Field::String,
-    announcements_last_read_at: Field::DateTime,
     admin: Field::Boolean,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -51,7 +50,6 @@ class UserDashboard < Administrate::BaseDashboard
     # :remember_created_at,
     :first_name,
     :last_name,
-    :announcements_last_read_at,
     :admin,
     :created_at,
     :updated_at,
@@ -73,7 +71,6 @@ class UserDashboard < Administrate::BaseDashboard
     # :reset_password_token,
     # :reset_password_sent_at,
     # :remember_created_at,
-    # :announcements_last_read_at,
   ].freeze
 
   # Overwrite this method to customize how users are displayed

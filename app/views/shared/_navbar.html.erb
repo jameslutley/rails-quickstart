@@ -17,7 +17,6 @@
 
     <div class="w-full block flex-grow lg:flex lg:items-center lg:justify-end lg:w-auto" id="navbarMain">
       <ul class="lg:flex lg:items-center list-reset font-medium">
-        <li class="lg:ml-8"><%= link_to "What's New", announcements_path, class: "no-underline text-grey-darker hover:text-grey-darkest #{unread_announcements(current_user)}" %></li>
         <% if user_signed_in? %>
           <li class="lg:ml-8">
             <%= link_to notifications_path, class: "flex items-center block no-underline text-grey-darker hover:text-grey-darkest" do %>
