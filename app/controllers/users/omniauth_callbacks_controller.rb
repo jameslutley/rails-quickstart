@@ -5,16 +5,12 @@ module Users
 
     attr_reader :service, :user
 
-    def facebook
-      handle_auth "Facebook"
-    end
-
     def twitter
       handle_auth "Twitter"
     end
 
-    def github
-      handle_auth "Github"
+    def google_oauth2
+      handle_auth "Google"
     end
 
     private
